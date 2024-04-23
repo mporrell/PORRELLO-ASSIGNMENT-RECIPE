@@ -313,8 +313,8 @@ nav label {
     display: inline-block;
     position: relative;
     user-select: none;
-    bottom: ____;
-    left: _____;
+    bottom: 0;
+    left: 0;
 }
 label span {
     background-color: #ffffff;
