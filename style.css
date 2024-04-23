@@ -1,0 +1,372 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+    position: relative;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+:root {
+    --teal: #7ABFBF;
+    --light-blue: rgba(122, 191, 191, 0.5);
+    --black: #0D0D0D;
+    --white: #F2F2F2;
+    --orange: #ED5428;
+
+    --fonts: "Bebas Neue", "Montserrat",  Arial, sans-serif;
+}
+
+html {
+    background-color: var(--light-blue);
+    font-family: var(--fonts);
+}
+
+body {
+    width: 414px;
+    margin: 0 auto;
+    background-color: var(--light-blue);
+}
+
+header {
+    background-color: var(--white);
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: 500;
+    text-align: center;
+    padding: 20px 0;
+}
+
+menu {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding-bottom: 10px;
+  }
+  
+  
+menu li {
+    font-size: 18px;
+    text-align: center;
+    color: var(--orange);
+  }
+
+main {
+    background-color: var(--white);    
+    font-family: "Montserrat";
+}
+
+#tacos {
+    width: 100%;
+    height: auto;
+}
+
+#intro {
+    margin: 20px 10px 0px 10px;
+    line-height: 1.5;
+}
+
+main h2 {
+    font-size: 25px;
+    font-family: "Bebas Neue";
+    text-align: center;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 15px 0;
+}
+
+
+#details dl {
+    margin: 0 10px;
+    line-height: 1.5;
+}
+
+#details dt {
+    display: inline-block;
+    font-weight: 700;
+    font-size: 16px;
+    padding-right: 10px;
+}
+
+#details dd {
+    display: inline;
+}
+
+#details dd:after {
+    display: block;
+    content: '';
+}
+
+#ingredients ul {
+    list-style: square;
+    line-height: 2;
+    padding-left: 30px;
+}
+
+#directions ol {
+    list-style: decimal;
+    margin: 0 15px;
+    padding: 0 10px;
+    line-height: 1.5;
+}
+
+#directions li {
+    padding: 0 0 20px 10px;
+}
+
+#side {
+    background-color: var(--teal);
+    display: flex;
+    flex-direction: column;
+}
+
+#side h3 {
+    font-family: "Bebas Neue";
+    font-size: 20px;
+}
+
+.sides img{
+    width: 20%;
+    height: auto;
+    float: left;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.sides h3{
+    padding: 10px 0;
+}
+
+.sides p{
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+.rating {
+    font-weight: 700;
+}
+
+nav {
+    grid-area: ;
+    min-width: 414px;
+    background-color: #ffffff;
+    box-shadow: 0px 3px 3px #bbb;
+    position: fixed;
+    top: 0;
+    z-index:5;
+}
+
+nav h2 {
+    display: none;
+    height: 0;
+}
+nav ul {
+    grid-area: ;
+    padding: 0;
+    overflow: hidden;
+    list-style: none;
+    max-height: 0;
+}
+nav li img {
+    display: none;
+}
+nav li a {
+    display: block;
+    padding: 20px;
+    text-decoration: none;
+}
+nav label {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    user-select: none;
+    bottom: ____;
+    left: _____;
+}
+label span {
+    background-color: #ffffff;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background-color .2s ease-out;
+    width: 18px;
+}
+nav span {
+    display: flex;
+    position: fixed;
+ }
+nav label svg {
+    display: block;
+}
+label span:before, label span:after {
+    background: #ffffff;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+nav input {
+    display: none;
+}
+nav input:checked ~ ul {
+    max-height: 550px;
+}
+
+
+/* #search {
+    grid-row: 2;
+    background-color: #F2F2F2;
+    text-align: center;
+    display: grid;
+    grid-template-rows: 1fr;
+    justify-content: center;
+    padding: 15px;
+}
+
+#search input {
+    width: 300px;
+    grid-row: 1;
+    border: 2px solid #EB5428;
+}
+
+#search button {
+    grid-row: 1;
+    background-color: #EB5428;
+    border: 2px solid #EB5428;
+} */
+
+
