@@ -176,14 +176,28 @@ menu {
     align-items: center;
     list-style: none;
     padding-bottom: 10px;
-  }
-  
-  
+}
+
 menu li {
     font-size: 18px;
     text-align: center;
     color: var(--orange);
-  }
+    text-decoration: none;
+}
+
+menu li:hover {
+    background-color: var(--light-blue);
+    cursor: pointer;
+}
+
+menu li:active {
+    background-color: var(--teal);
+}
+
+menu li a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Use the color inherited from the parent li */
+}
 
 main {
     background-color: var(--white);    
@@ -208,7 +222,6 @@ main h2 {
     text-transform: uppercase;
     padding: 15px 0;
 }
-
 
 #details dl {
     margin: 0 10px;
@@ -276,10 +289,14 @@ main h2 {
     font-size: 14px;
 }
 
+.sides:hover {
+    cursor: pointer;
+    background-color: var(--orange);
+}
+
 .rating {
     font-weight: 700;
 }
-
 
 nav h2 {
     display: none;
@@ -297,17 +314,67 @@ nav {
     z-index:5;
     padding-top: 5px
 }
+
+nav label {
+    cursor: pointer;
+    width: 70px;
+    margin-left: 4px;
+}
+
+label span {
+    background-color: #ffffff;
+    height: 0;
+    display: block;
+    position: relative;
+    transition: background-color .2s ease-out;
+    width: 18px;
+    left: 15px;
+    top: 7px;
+    text-transform: uppercase;
+    font-family: "Bebas Neue";
+    color: var(--black);
+    font-size: 22px;
+}
+
+nav label svg {
+    display: block;
+}
+
+input[type="checkbox"]:hover + label {
+    background-color: var(--light-blue);
+}
+
+label span:before, label span:after {
+    background: #ffffff;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+
+nav #dropdown {
+    display: none;
+}
+
+nav input:checked ~ ul {
+    max-height: 600px;
+    overflow: hidden; 
+}
+
 nav ul {
     display: grid;
     grid-template-rows: repeat(7, auto); 
     padding: 0;
-    overflow: hidden;
+    overflow: hidden; 
     list-style: none;
     max-height: 0;
 }
+
 nav li img {
-    display: none;
+    display: none; 
 }
+
 nav li a {
     display: block;
     padding: 10px;
@@ -319,7 +386,17 @@ nav li a {
     font-size: 20px;
 }
 
-nav ul #home{
+nav li a:hover {
+    background-color: var(--light-blue);
+    color: var(--black);
+    transition: transform 200ms ease-out;
+}
+
+nav > ul > li > a:last-child {
+    padding: 30px 10px 32px 10px;
+}
+
+nav ul #home {
     position: absolute;
     top: 0; 
     left: 50%;
@@ -328,16 +405,10 @@ nav ul #home{
     padding: 4px 100px 0 100px;
 }
 
-nav li a:hover{
-    color: var(--white);
-    background-color: var(--orange);
-    transition: 200ms;
-}
-
-nav ul #home svg {
+#home svg {
     display: block;
-    margin: 0 auto; /* Center the SVG horizontally */
-    transform: translateY(10px); /* Move the SVG down by 10px */
+    margin: 0 auto; 
+    transform: translateY(10px);
 }
 
 #signin {
@@ -355,65 +426,15 @@ nav ul #home svg {
     top: 10px;
     right: 15px;
 }
-#signin a {
-    position: relative;
-    top: 25px;
-    right: 2px;
-    color: var(--black);
-}
 
-#signin svg:hover{
-    background-color: var(--orange);
-    fill: var(--white);
-    cursor: pointer;
-}
-
-nav label {
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    user-select: none;
-    bottom: 0;
-    left: 0;
-}
-
-label span {
-    background-color: #ffffff;
-    height: 0;
-    display: block;
-    position: relative;
-    transition: background-color .2s ease-out;
-    width: 18px;
-    left: 20px;
-    top: 10px;
+#signin p {
     text-transform: uppercase;
     font-family: "Bebas Neue";
+    font-size: 22px;
+    position: relative;
+    top: 20px;
+    right: 2px;
     color: var(--black);
-    font-size: 20px;
-}
-
-nav label svg {
-    display: block;
-}
-
-nav svg:hover{
-    background-color: var(--orange);
-    fill: var(--white);
-}
-
-label span:before, label span:after {
-    background: #ffffff;
-    content: '';
-    display: block;
-    height: 100%;
-    position: absolute;
-    width: 100%;
-}
-nav #dropdown {
-    display: none;
-}
-nav input:checked ~ ul {
-    max-height: 550px;
 }
 
 #search {
@@ -437,9 +458,19 @@ nav input:checked ~ ul {
     border: 2px solid #EB5428;
 }
 
+#search button:hover{
+    cursor: pointer;
+}
+
 footer {
+    display: grid;
+    grid-template-rows: 100px 1fr 50px;
+    justify-content: center;
+    text-align: center;
+    row-gap: 25px;
     background-color: var(--white);
 }
+
 footer h2, footer p{
     display: none;
     height: 0;
@@ -462,14 +493,12 @@ footer h2, footer p{
 #socials a {
     text-decoration: none;
     color: var(--orange);
+    font-size: 20px;
 }
 
-footer {
-    display: grid;
-    grid-template-rows: 100px 1fr 50px;
-    justify-content: center;
-    text-align: center;
-    row-gap: 25px;
+#socials li:hover {
+    background-color: var(--light-blue);
+    cursor: pointer;
 }
 
 #socials a{
@@ -480,12 +509,6 @@ footer {
     color: var(--orange);
 }
 
-footer img {
-    width: 200px;
-    grid-row: 2;
-    margin: auto;
-}
-
 footer small {
     position: absolute;
     bottom: 0;
@@ -493,3 +516,360 @@ footer small {
     transform: translateX(-50%);
 }
 
+footer img {
+    width: 200px;
+    grid-row: 2;
+    margin: auto;
+}
+
+@media screen and (min-width:786px) {
+    body {
+        width: 786px;
+    }
+
+    h1 {
+        text-align: left;
+        padding: 20px;
+        padding-top: 200px;
+    }
+
+    .container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+
+    img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    menu {
+        position: absolute;
+        top: 306px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+
+    menu li {
+        margin: 10px 0;
+    }
+
+    #details dl {
+        margin: 0 auto;
+        line-height: 1.5;
+        text-align: center;
+    }
+
+    #ingredients {
+        float: left;
+    }
+
+    #directions ol{
+        padding-left: 230px;
+    }
+
+    #side {
+        clear: both; /* Clear both left and right floats */
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding-bottom: 10px;
+    }
+
+    #side h2{
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
+    #socials ul {
+        float: right;
+    }
+
+    nav {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        grid-template-rows: 1fr 1fr;
+        max-width: 786px;
+    }
+
+    label[for="dropdown"] {
+        display: none;
+    }
+
+    nav ul #home {
+        left: 40px;
+        padding: 0px 10px 0 10px;
+    }
+
+    nav {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        grid-template-rows: 1fr 1fr 1fr;
+        max-width: 786px;
+    }
+
+    label[for="dropdown"] {
+        display: none;
+    }
+
+    nav ul {
+        overflow: visible; 
+        grid-row-start: 2;  
+        grid-column-start: 1;
+        grid-column-end: 8;  
+        display: flex;
+        flex-direction: row;  
+    }
+
+    nav ul li {
+        display: flex;
+        flex-direction: row;
+    }
+
+    nav li img {
+        display: block; 
+        max-width: 75%;
+        padding: 0px 10px 0 10px;
+    }
+
+    nav li img:hover {
+        background-color: var(--light-blue);
+    }
+
+    nav li a:hover {
+        background-color: #ffffff;
+    }
+
+
+    footer {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    #socials {
+        grid-column-start: 2;
+    }
+
+    footer img {
+        grid-column-start: 1;
+        grid-row-start: 1;
+        padding: 50px;
+    }
+
+    footer small {
+        position: absolute;
+        bottom: 0;
+        left: 185px;
+        transform: translateX(-50%);
+    }
+
+    #search {
+        grid-column-start: 6;
+        grid-row-start: 1;
+        padding: 0 20px 0 0;
+        margin-top: 10px;
+        background-color: #ffffff;
+    }
+}
+
+@media screen and (min-width:1280px) {
+    body {
+        width: 1280px;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    menu {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+        width: 100px;
+        position: absolute;
+        left: 52px;
+        top: 712px;
+        border: 2px solid var(--orange);
+        padding-bottom: 532px;
+    }
+
+    #tacos {
+        width: 45%;
+        height: auto;
+        margin-left: 100px;
+        float: left;
+    }
+
+    #intro {
+        padding-left: 675px;
+    }
+
+    #details {
+        clear: both;
+        background-color: var(--black);
+        color: var(--teal);
+    }
+
+    #details dl {
+        display: grid;
+        grid-template-rows: 25px 25px;
+    }
+
+    #details dt {
+        grid-row: 1;
+    }
+
+    #details dd {
+        grid-row: 2;
+    }
+
+    #directions ol{
+        padding-left: 250px;
+    }
+
+    #xl {
+        clear: both;
+        display: flex;
+        width: 100%;
+    }
+
+    #side h2 {
+        grid-row-start: 1;
+        grid-column: 1 / span 4;
+    }
+
+    .sides {
+        grid-row-start: 2;
+        padding: 45px;
+    }
+
+    .sides img{
+        width: 100%;
+        height: auto;
+        padding: 0;
+    }
+
+    .sides h3{
+        padding: 10px 0;
+    }
+
+    .sides p{
+        line-height: 1.5;
+        font-size: 14px;
+    }
+
+    .sides:hover {
+        cursor: pointer;
+        background-color: var(--orange);
+    }
+
+    .rating {
+        font-weight: 700;
+    }
+
+    nav {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        grid-template-rows: 1fr 1fr;
+        max-width: 786px;
+    }
+
+    label[for="dropdown"] {
+        display: none;
+    }
+
+    nav ul #home {
+        left: 40px;
+        padding: 52px 10px 52px 10px;
+    }
+
+    nav {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        grid-template-rows: 1fr 1fr 1fr;
+        max-width: 1280px;
+    }
+
+    label[for="dropdown"] {
+        display: none;
+    }
+
+    nav ul {
+        overflow: visible; 
+        grid-row-start: 1;  
+        grid-column-start: 2;
+        grid-column-end: 7;  
+        display: flex;
+        flex-direction: row;  
+    }
+
+    nav ul li {
+        display: flex;
+        flex-direction: row;
+    }
+
+    nav li img {
+        display: block; 
+        max-width: 50%;
+        padding: 0px 10px 0 10px;
+        margin-left: 18px;
+    }
+
+    nav li img:hover {
+        background-color: var(--light-blue);
+    }
+
+    nav li a:hover {
+        background-color: #ffffff;
+    }
+
+    #search {
+        grid-row: 3;
+        grid-column-start: 4;
+    }
+
+    #signin p {
+        text-transform: uppercase;
+        font-family: "Bebas Neue";
+        font-size: 22px;
+        position: relative;
+        top: 60px;
+        right: 2px;
+        color: var(--black);
+    }
+
+    #signin svg {
+        position: absolute;
+        top: 50px;
+        right: 15px;
+    }
+
+    footer {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    footer img {
+        grid-column-start: 1;
+        grid-row-start: 1;
+        padding: 50px;
+    }
+
+    #socials {
+        grid-column-start: 4;
+    }
+
+    footer small {
+        grid-column-start: 4;
+    }
+
+    footer small {
+        position: absolute;
+        bottom: 200px;
+        left: 300px;
+        transform: translateX(-50%);
+    }
+}
