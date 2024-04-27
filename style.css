@@ -873,3 +873,31 @@ footer img {
         transform: translateX(-50%);
     }
 }
+
+
+@media print {
+    body {
+        margin: 0.5in;
+    }
+
+    body {
+        font-family: serif;
+    }
+
+    img {
+        filter: grayscale(100%);
+    }
+
+    nav {
+        display: none;
+    }
+
+    a::after {
+        content: " (" attr(href) ")";
+    }
+
+    @page {
+        size: auto;
+        margin: 0.5in;
+    }
+}
